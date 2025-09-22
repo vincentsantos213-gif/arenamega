@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-        
+
 body {
     font-family: 'Arial', sans-serif;
     color: #000;
@@ -11,939 +11,939 @@ body {
     overflow-x: hidden;
 }
 
-        /* Header Navigation - Mimicking CNBC */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #FFD700, #DAA520, #000000); /* Same as banner */
-            color: #fff;
-            padding: 0 20px;
-            height: 150px; /* Increased height to accommodate larger logo */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            margin-right: 20px; /* Add spacing between logo and nav menu */
-        }
-        
-        .logo img {
-            height: 138px;
-            width: auto;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            flex: 1; /* Allow nav menu to take available space */
-            justify-content: center;
-        }
-        
-        .nav-menu li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        .nav-menu li a:hover {
-            text-decoration: underline;
-        }
-        
-        .header-right {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .search-input {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-        }
-        
-        .header-btn {
-            padding: 5px 10px;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+/* Header Navigation - Mimicking CNBC */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #FFD700, #DAA520, #000000); /* Same as banner */
+    color: #fff;
+    padding: 0 20px;
+    height: 68px; /* Increased height to accommodate larger logo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        /* Market Data Row - Mimicking Indices */
-        .market-data {
-            display: flex;
-            justify-content: space-around;
-            background-color: #f2f2f2;
-            padding: 10px 0;
-            font-size: 12px;
-        }
-        
-        .market-item {
-            text-align: center;
-        }
-        
-        .market-label {
-            font-size: 12px;
-        }
-        
-        /* Animated Value Container - Mimicking Framer/Sirclo style */
-        .animated-value {
-            position: relative;
-            height: 20px; /* Adjust height as needed */
-            overflow: hidden;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        
-        .value-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transform: perspective(1000px) rotateX(90deg);
-            transition: all 0.6s ease-in-out;
-            font-family: 'DM Sans', sans-serif; /* Mimicking Framer font */
-            font-weight: 600;
-            font-size: 14px; /* Smaller for market */
-            text-align: center;
-        }
-        
-        .value-item.active {
-            opacity: 1;
-            transform: perspective(1000px) rotateX(0deg);
-        }
-        
-        .value-item.inactive {
-            opacity: 0.3;
-            transform: perspective(1000px) rotateX(-90deg);
-        }
-        
-        .market-change .value-item {
-            color: #28a745; /* Green for positive, adjust per item */
-        }
-        
-        .market-change .value-item.negative {
-            color: #dc3545; /* Red for negative */
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add spacing between logo and nav menu */
+}
 
-        /* Banner Section - Mimicking Squawk Box */
-        .banner {
-            background: linear-gradient(135deg, #FFD700, #DAA520, #000000); /* Gradasi emas ke hitam */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+.logo img {
+    height: 138px;
+    width: auto;
+}
 
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s ease;
-        }
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex: 1; /* Allow nav menu to take available space */
+    justify-content: center;
+}
 
-        .banner:hover::before {
-            left: 100%;
-            animation: shine 1s ease-in-out;
-        }
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        @keyframes shine {
-            0% {
-                left: -100%;
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                left: 100%;
-                opacity: 0;
-            }
-        }
-        
-        .banner-text {
-            flex: 1;
-            text-align: left;
-        }
-        
-        .banner-imgs {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .banner-imgs img {
-            width: 163px;
-            height: 57px;
-            object-fit: cover;
-        }
+.nav-menu li a:hover {
+    text-decoration: underline;
+}
 
-        /* Quick Links - Mimicking Quick Links */
-        .quick-links {
-            display: flex;
-            justify-content: space-around;
-            background-color: #f8f8f8;
-            padding: 15px 20px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .quick-link {
-            text-align: center;
-            color: #000;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .quick-link:hover {
-            background-color: #ddd;
-            transform: translateY(-2px);
-        }
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-        /* Latest News Section - Mimicking Latest News Grid */
-        .news-section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .news-header {
-            font-size: 24px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-        }
-        
-        .news-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .featured-news {
-            grid-column: span 2;
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .featured-img {
-            flex: 1;
-            height: 200px;
-            background: #ccc; /* Placeholder */
-            object-fit: cover;
-        }
-        
-        .featured-content {
-            flex: 1;
-        }
-        
-        .featured-title {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .news-item {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .news-img {
-            width: 150px;
-            height: 100px;
-            background: #ccc; /* Placeholder */
-            object-fit: cover;
-        }
-        
-        .news-content {
-            flex: 1;
-        }
-        
-        .news-title {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .news-meta {
-            font-size: 12px;
-            color: #666;
-        }
+.search-input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
 
-        /* CTA Buttons in Featured Content */
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            margin-top: 15px;
-        }
-        
-        .cta-button {
-            padding: 12px 30px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            background-color: #f0f0f0;
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .login-button {
-            padding: 12px 30px;
-            background-color: transparent;
-            color: #000;
-            text-decoration: none;
-            border: 2px solid #000;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
-        }
-        
-        .login-button:hover {
-            background-color: #000;
-            color: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+.header-btn {
+    padding: 5px 10px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        /* Modal Styles - Elegant Glassmorphism */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6); /* Lebih transparan */
-            backdrop-filter: blur(15px); /* Blur lebih kuat untuk keseluruhan */
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        .modal-content {
-            background: rgba(255, 255, 255, 0.1); /* Transparan dengan blur */
-            backdrop-filter: blur(30px); /* Blur halus dan elegant */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Border halus untuk glass effect */
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 20px; /* Radius lebih lembut untuk elegant */
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-            color: #fff; /* Ubah ke putih untuk kontras dengan transparan */
-            position: relative;
-            animation: slideIn 0.4s ease-out;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Shadow elegant */
-            font-weight: 500;
-            line-height: 1.6;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        .modal-content h2 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow teks untuk elegant */
-        }
-        
-        .modal-content p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .close {
-            color: rgba(255, 255, 255, 0.7);
-            float: right;
-            font-size: 32px;
-            font-weight: 300;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            transition: color 0.3s ease;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #fff;
-            transform: scale(1.1);
-        }
-        
-        .logo-grid {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 25px;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .logo-grid img {
-            max-width: 100px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .logo-grid img:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+/* Market Data Row - Mimicking Indices */
+.market-data {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+    font-size: 12px;
+}
 
-        .slot-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
+.market-item {
+    text-align: center;
+}
 
-        .slot-link:hover {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+.market-label {
+    font-size: 12px;
+}
 
-        /* Footer */
-        .footer {
-            background-color: #f8f8f8;
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
-        }
+/* Animated Value Container - Mimicking Framer/Sirclo style */
+.animated-value {
+    position: relative;
+    height: 20px; /* Adjust height as needed */
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 14px;
+}
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
-            }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .market-data {
-                flex-direction: column;
-            }
-            
-            .banner {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .quick-links {
-                flex-direction: column;
-            }
-            
-            .news-grid, .featured-news {
-                grid-template-columns: 1fr;
-            }
-            
-            .animated-value {
-                font-size: 12px;
-            }
+.value-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: perspective(1000px) rotateX(90deg);
+    transition: all 0.6s ease-in-out;
+    font-family: 'DM Sans', sans-serif; /* Mimicking Framer font */
+    font-weight: 600;
+    font-size: 14px; /* Smaller for market */
+    text-align: center;
+}
 
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
-                padding: 25px;
-                border-radius: 15px;
-            }
+.value-item.active {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg);
+}
 
-            .logo-grid {
-                flex-direction: column;
-                align-items: center;
-            }
+.value-item.inactive {
+    opacity: 0.3;
+    transform: perspective(1000px) rotateX(-90deg);
+}
 
-            .logo-grid img {
-                max-width: 80px;
-            }
+.market-change .value-item {
+    color: #28a745; /* Green for positive, adjust per item */
+}
 
-            .modal-content h2 {
-                font-size: 2em;
-            }
+.market-change .value-item.negative {
+    color: #dc3545; /* Red for negative */
+}
 
-            .cta-buttons {
-                flex-direction: column;
-            }
+/* Banner Section - Mimicking Squawk Box */
+.banner {
+    background: linear-gradient(135deg, #FFD700, #DAA520, #000000); /* Gradasi emas ke hitam */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
 
-            .logo img {
-                height: 100px; /* Smaller on mobile */
-            }
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
 
-            .logo {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+.banner:hover::before {
+    left: 100%;
+    animation: shine 1s ease-in-out;
+}
 
-        /* LiveChat Widget Styles - Revamped */
-        .livechat-widget {
-            max-width: 100%;
-            position: fixed;
-            bottom: 0;
-            z-index: 2;
-            display: flex;
-            align-items: flex-end;
-            will-change: width, height, transform, opacity;
-            backface-visibility: hidden;
-            padding: 0.8em 0.8em 0 0.8em;
-            right: 0;
-            justify-content: flex-end;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+@keyframes shine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
 
-        .livechat-container {
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.banner-text {
+    flex: 1;
+    text-align: left;
+}
 
-        .livechat-badge {
-            display: flex;
-            min-width: 0;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.banner-imgs {
+    display: flex;
+    gap: 10px;
+}
 
-        .livechat-button {
-            display: flex;
-            min-width: 0;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-            flex-direction: row-reverse;
-        }
+.banner-imgs img {
+    width: 163px;
+    height: 57px;
+    object-fit: cover;
+}
 
-        .livechat-header {
-            position: relative;
-            width: 255px;
-            height: 50px;
-            box-shadow: rgba(0, 0, 0, 0.125) 0px 0.362176px 0.941657px -1px, rgba(0, 0, 0, 0.18) 0px 3px 7.8px -2px;
-            border-radius: 8px 8px 0px 0px;
-            display: flex;
-            padding: 0 0.9em;
-            align-items: center;
-            background: #252525;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-            position: relative;
-            color: #111111;
-            background-color: #E9937F;
-        }
+/* Quick Links - Mimicking Quick Links */
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        .livechat-header:hover {
-            cursor: pointer;
-        }
+.quick-link {
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
 
-        .livechat-header:focus {
-            outline-style: auto;
-        }
+.quick-link:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}
 
-        .livechat-header a {
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-grow: 1;
-            width: 100%;
-        }
+/* Latest News Section - Mimicking Latest News Grid */
+.news-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .livechat-header a:hover {
-            cursor: pointer;
-        }
+.news-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
 
-        .livechat-text {
-            margin: 1em 0;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1;
-            font-weight: 700;
-            font-size: 0.9em;
-            margin-right: 4px;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 
-        .livechat-icon-wrapper {
-            position: relative;
-            display: flex;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.featured-news {
+    grid-column: span 2;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-        .livechat-svg {
-            display: inline-block;
-            flex-shrink: 0;
-            width: 1em;
-            height: 1em;
-            font-size: 1.5rem;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            fill: currentColor;
-        }
+.featured-img {
+    flex: 1;
+    height: 200px;
+    background: #ccc; /* Placeholder */
+    object-fit: cover;
+}
 
-        .livechat-dot {
-            opacity: 1;
-            transform: scale(1);
-            transform-origin: 50% 50%;
-            transition: 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 50ms;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.featured-content {
+    flex: 1;
+}
 
-        .livechat-pulse {
-            position: absolute;
-            z-index: 1;
-            left: 0;
-            right: 0;
-            bottom: 1px;
-            transition: opacity 150ms cubic-bezier(0.33, 0, 0.67, 1) 50ms;
-            display: flex;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.featured-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
 
-        .livechat-enter {
-            max-width: 100%;
-            position: absolute;
-            bottom: 0;
-            z-index: 2;
-            display: flex;
-            align-items: flex-end;
-            will-change: width, height, transform, opacity;
-            backface-visibility: hidden;
-            padding: 0.8em 0.8em 0 0.8em;
-            right: 0;
-            justify-content: flex-end;
-            animation: slideUp 200ms ease forwards;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.news-item {
+    display: flex;
+    gap: 15px;
+}
 
-        @keyframes slideUp {
-            0% {
-                opacity: 0;
-                transform: translate3d(0, 100%, 0);
-            }
-            100% {
-                opacity: 1;
-                transform: translate3d(0, 0%, 0);
-            }
-        }
+.news-img {
+    width: 150px;
+    height: 100px;
+    background: #ccc; /* Placeholder */
+    object-fit: cover;
+}
 
-        .livechat-active {
-            position: relative;
-            width: 255px;
-            height: 50px;
-            box-shadow: rgba(0, 0, 0, 0.125) 0px 0.362176px 0.941657px -1px, rgba(0, 0, 0, 0.18) 0px 3px 7.8px -2px;
-            border-radius: 8px 8px 0px 0px;
-            display: flex;
-            padding: 0 0.9em;
-            align-items: center;
-            background: #252525;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-            position: relative;
-            color: #111111;
-            background-color: #E9937F;
-        }
+.news-content {
+    flex: 1;
+}
 
-        .livechat-active:hover {
-            cursor: pointer;
-        }
+.news-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
 
-        .livechat-active:focus {
-            outline-style: none;
-        }
+.news-meta {
+    font-size: 12px;
+    color: #666;
+}
 
-        .livechat-scale {
-            position: relative;
-            display: flex;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-            transform: scale(1);
-            animation: scaleIn 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+/* CTA Buttons in Featured Content */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
 
-        @keyframes scaleIn {
-            0% {
-                transform: scale(1.0);
-            }
-            100% {
-                transform: scale(1.05);
-            }
-        }
+.cta-button {
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
 
-        .livechat-hidden-dot {
-            opacity: 0;
-            transform: scale(0);
-            transform-origin: 50% 50%;
-            transition: 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 50ms;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .livechat-visible-pulse {
-            position: absolute;
-            z-index: 1;
-            left: 0;
-            right: 0;
-            bottom: 1px;
-            transition: opacity 150ms cubic-bezier(0.33, 0, 0.67, 1) 50ms;
-            display: flex;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.login-button {
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
 
-        .livechat-typing-indicator {
-            min-width: 14px;
-        }
+.login-button:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
 
-        .livechat-bubble1 {
-            transform-box: fill-box;
-            transform-origin: 30px 20px;
-            animation-timing-function: cubic-bezier(0, 0, 1, 1);
-            animation-name: bounce1;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-            animation-delay: 0ms;
-            animation-fill-mode: none;
-        }
+/* Modal Styles - Elegant Glassmorphism */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Lebih transparan */
+    backdrop-filter: blur(15px); /* Blur lebih kuat untuk keseluruhan */
+    animation: fadeIn 0.4s ease-in-out;
+}
 
-        @keyframes bounce1 {
-            0%, 66.67%, 100% {
-                transform: translateX(-21px) translate(0px, 0px);
-            }
-            6.67% {
-                transform: translateX(-21px) translate(0px, -8px);
-            }
-            13.33%, 20% {
-                transform: translateX(-21px) translate(0px, -10px);
-            }
-            26.67% {
-                transform: translateX(-21px) translate(0px, -6px);
-            }
-            33.33% {
-                transform: translateX(-21px) translate(0px, -2px);
-            }
-            40% {
-                transform: translateX(-21px) translate(0px, 3px);
-            }
-            46.67% {
-                transform: translateX(-21px) translate(0px, 2px);
-            }
-            53.33% {
-                transform: translateX(-21px) translate(0px, -1px);
-            }
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        .livechat-bubble2 {
-            transform-box: fill-box;
-            transform-origin: 30px 20px;
-            animation-timing-function: cubic-bezier(0, 0, 1, 1);
-            animation-name: bounce2;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-            animation-delay: 0ms;
-            animation-fill-mode: none;
-        }
+.modal-content {
+    background: rgba(255, 255, 255, 0.1); /* Transparan dengan blur */
+    backdrop-filter: blur(30px); /* Blur halus dan elegant */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border halus untuk glass effect */
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 20px; /* Radius lebih lembut untuk elegant */
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    color: #fff; /* Ubah ke putih untuk kontras dengan transparan */
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Shadow elegant */
+    font-weight: 500;
+    line-height: 1.6;
+}
 
-        @keyframes bounce2 {
-            0%, 6.67%, 73.33%, 100% {
-                transform: translateX(0px) translate(0px, 0px);
-            }
-            13.33% {
-                transform: translateX(0px) translate(0px, -8px);
-            }
-            20%, 26.67% {
-                transform: translateX(0px) translate(0px, -10px);
-            }
-            33.33% {
-                transform: translateX(0px) translate(0px, -6px);
-            }
-            40% {
-                transform: translateX(0px) translate(0px, -2px);
-            }
-            46.67% {
-                transform: translateX(0px) translate(0px, 3px);
-            }
-            53.33% {
-                transform: translateX(0px) translate(0px, 2px);
-            }
-            60% {
-                transform: translateX(0px) translate(0px, -1px);
-            }
-        }
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-        .livechat-bubble3 {
-            transform-box: fill-box;
-            transform-origin: 30px 20px;
-            animation-timing-function: cubic-bezier(0, 0, 1, 1);
-            animation-name: bounce3;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-            animation-delay: 0ms;
-            animation-fill-mode: none;
-        }
+.modal-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow teks untuk elegant */
+}
 
-        @keyframes bounce3 {
-            0%, 13.33%, 80%, 100% {
-                transform: translateX(21px) translate(0px, 0px);
-            }
-            20% {
-                transform: translateX(21px) translate(0px, -8px);
-            }
-            26.67%, 33.33% {
-                transform: translateX(21px) translate(0px, -10px);
-            }
-            40% {
-                transform: translateX(21px) translate(0px, -6px);
-            }
-            46.67% {
-                transform: translateX(21px) translate(0px, -2px);
-            }
-            53.33% {
-                transform: translateX(21px) translate(0px, 3px);
-            }
-            60% {
-                transform: translateX(21px) translate(0px, 2px);
-            }
-            66.67% {
-                transform: translateX(21px) translate(0px, -1px);
-            }
-        }
+.modal-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
 
-        .livechat-shrink {
-            position: relative;
-            display: flex;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-            transform: scale(1.25);
-            animation: scaleOut 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
-            --primary-color: #2000F0;
-            --secondary-color: #FFFFFF;
-            --tertiary-color: #2E2E2E;
-        }
+.close {
+    color: rgba(255, 255, 255, 0.7);
+    float: right;
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
 
-        @keyframes scaleOut {
-            0% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1.0);
-            }
-        }
+.close:hover,
+.close:focus {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo-grid img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo-grid img:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slot-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.slot-link:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .market-data {
+        flex-direction: column;
+    }
+    
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quick-links {
+        flex-direction: column;
+    }
+    
+    .news-grid, .featured-news {
+        grid-template-columns: 1fr;
+    }
+    
+    .animated-value {
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .logo-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-grid img {
+        max-width: 80px;
+    }
+
+    .modal-content h2 {
+        font-size: 2em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .logo img {
+        height: 100px; /* Smaller on mobile */
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* LiveChat Widget Styles - Revamped */
+.livechat-widget {
+    max-width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    will-change: width, height, transform, opacity;
+    backface-visibility: hidden;
+    padding: 0.8em 0.8em 0 0.8em;
+    right: 0;
+    justify-content: flex-end;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-badge {
+    display: flex;
+    min-width: 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-button {
+    display: flex;
+    min-width: 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+    flex-direction: row-reverse;
+}
+
+.livechat-header {
+    position: relative;
+    width: 255px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.125) 0px 0.362176px 0.941657px -1px, rgba(0, 0, 0, 0.18) 0px 3px 7.8px -2px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    padding: 0 0.9em;
+    align-items: center;
+    background: #252525;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+    position: relative;
+    color: #111111;
+    background-color: #E9937F;
+}
+
+.livechat-header:hover {
+    cursor: pointer;
+}
+
+.livechat-header:focus {
+    outline-style: auto;
+}
+
+.livechat-header a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.livechat-header a:hover {
+    cursor: pointer;
+}
+
+.livechat-text {
+    margin: 1em 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-right: 4px;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.livechat-icon-wrapper {
+    position: relative;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-svg {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    font-size: 1.5rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    fill: currentColor;
+}
+
+.livechat-dot {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 50ms;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-pulse {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    transition: opacity 150ms cubic-bezier(0.33, 0, 0.67, 1) 50ms;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-enter {
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    will-change: width, height, transform, opacity;
+    backface-visibility: hidden;
+    padding: 0.8em 0.8em 0 0.8em;
+    right: 0;
+    justify-content: flex-end;
+    animation: slideUp 200ms ease forwards;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0%, 0);
+    }
+}
+
+.livechat-active {
+    position: relative;
+    width: 255px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.125) 0px 0.362176px 0.941657px -1px, rgba(0, 0, 0, 0.18) 0px 3px 7.8px -2px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    padding: 0 0.9em;
+    align-items: center;
+    background: #252525;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+    position: relative;
+    color: #111111;
+    background-color: #E9937F;
+}
+
+.livechat-active:hover {
+    cursor: pointer;
+}
+
+.livechat-active:focus {
+    outline-style: none;
+}
+
+.livechat-scale {
+    position: relative;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    animation: scaleIn 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.livechat-hidden-dot {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 50ms;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-visible-pulse {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    transition: opacity 150ms cubic-bezier(0.33, 0, 0.67, 1) 50ms;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+.livechat-typing-indicator {
+    min-width: 14px;
+}
+
+.livechat-bubble1 {
+    transform-box: fill-box;
+    transform-origin: 30px 20px;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-name: bounce1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+    animation-fill-mode: none;
+}
+
+@keyframes bounce1 {
+    0%, 66.67%, 100% {
+        transform: translateX(-21px) translate(0px, 0px);
+    }
+    6.67% {
+        transform: translateX(-21px) translate(0px, -8px);
+    }
+    13.33%, 20% {
+        transform: translateX(-21px) translate(0px, -10px);
+    }
+    26.67% {
+        transform: translateX(-21px) translate(0px, -6px);
+    }
+    33.33% {
+        transform: translateX(-21px) translate(0px, -2px);
+    }
+    40% {
+        transform: translateX(-21px) translate(0px, 3px);
+    }
+    46.67% {
+        transform: translateX(-21px) translate(0px, 2px);
+    }
+    53.33% {
+        transform: translateX(-21px) translate(0px, -1px);
+    }
+}
+
+.livechat-bubble2 {
+    transform-box: fill-box;
+    transform-origin: 30px 20px;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-name: bounce2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+    animation-fill-mode: none;
+}
+
+@keyframes bounce2 {
+    0%, 6.67%, 73.33%, 100% {
+        transform: translateX(0px) translate(0px, 0px);
+    }
+    13.33% {
+        transform: translateX(0px) translate(0px, -8px);
+    }
+    20%, 26.67% {
+        transform: translateX(0px) translate(0px, -10px);
+    }
+    33.33% {
+        transform: translateX(0px) translate(0px, -6px);
+    }
+    40% {
+        transform: translateX(0px) translate(0px, -2px);
+    }
+    46.67% {
+        transform: translateX(0px) translate(0px, 3px);
+    }
+    53.33% {
+        transform: translateX(0px) translate(0px, 2px);
+    }
+    60% {
+        transform: translateX(0px) translate(0px, -1px);
+    }
+}
+
+.livechat-bubble3 {
+    transform-box: fill-box;
+    transform-origin: 30px 20px;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-name: bounce3;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+    animation-fill-mode: none;
+}
+
+@keyframes bounce3 {
+    0%, 13.33%, 80%, 100% {
+        transform: translateX(21px) translate(0px, 0px);
+    }
+    20% {
+        transform: translateX(21px) translate(0px, -8px);
+    }
+    26.67%, 33.33% {
+        transform: translateX(21px) translate(0px, -10px);
+    }
+    40% {
+        transform: translateX(21px) translate(0px, -6px);
+    }
+    46.67% {
+        transform: translateX(21px) translate(0px, -2px);
+    }
+    53.33% {
+        transform: translateX(21px) translate(0px, 3px);
+    }
+    60% {
+        transform: translateX(21px) translate(0px, 2px);
+    }
+    66.67% {
+        transform: translateX(21px) translate(0px, -1px);
+    }
+}
+
+.livechat-shrink {
+    position: relative;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.25);
+    animation: scaleOut 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #2E2E2E;
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
